@@ -1,0 +1,40 @@
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+
+@model IPagedList<VacationSite3.Models.Data.Flights>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link href="~/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+</head>
+<table class="table table-bordered">
+    <tr>
+        <th>Flight Id</th>
+        <th>Flight Name</th>
+        <th>Flight Price</th>
+        <th>Flight Time</th>
+        <th>Flight's Pilot</th>
+        <th>Country</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+
+            <td>@x.FlightId</td>
+            <td>@x.FlightName</td>
+            <td>@x.FlightPrice</td>
+            <td>@x.FlightTime</td>
+            <td>@x.FlightsPilot</td>
+            <td>@x.Country.CountryName</td>
+            <td><a href="/Home/UpdateFlight/@x.FlightId" class="btn btn-success">Update</a></td>
+            <td><a href="/Home/DeleteFlight/@x.FlightId" class="btn btn-danger">Delete</a></td>
+        </tr>
+    }
+</table>
+<a href="/Home/AddFlight" class="btn btn-info">Add Flight</a>
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))

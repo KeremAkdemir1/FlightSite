@@ -1,0 +1,43 @@
+﻿@model VacationSite3.Models.Data.Flights
+
+@{
+    ViewData["Title"] = "AddFlight";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link href="~/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+</head>
+<h1>Add Flight</h1>
+<br />
+<style>
+    body {
+        background-image: url(https://i.pinimg.com/originals/86/50/73/865073c1a445365adbfb0cfeb8cb53ed.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+@using (Html.BeginForm("AddFlight", "Home", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.FlightName)
+    @Html.TextBoxFor(x => x.FlightName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.FlightName, "", new { @style = "color:red" })
+    <br />
+    @Html.LabelFor(x => x.FlightPrice)
+    @Html.TextBoxFor(x => x.FlightPrice, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.FlightPrice, "", new { @style = "color:red" })
+    <br />
+    @Html.LabelFor(x => x.FlightTime)
+    @Html.TextBoxFor(x => x.FlightTime, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.FlightTime, "", new { @style = "color:red" })
+    <br />
+    @Html.LabelFor(x => x.FlightsPilot)
+    @Html.TextBoxFor(x => x.FlightsPilot, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.FlightsPilot, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Category")
+    @Html.TextBoxFor(x => x.CountryId, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CountryId, "", new { @style = "color:red" })
+
+    <button class="btn btn-primary">Save</button>
+}
+

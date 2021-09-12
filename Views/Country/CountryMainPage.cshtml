@@ -1,0 +1,31 @@
+﻿@model List<VacationSite3.Models.Data.Countries>
+@{
+    ViewData["Title"] = "CountryMainPage";
+    
+}
+<style>
+
+    div {
+        width:300px;
+        border:solid;
+        margin:20px;
+        padding:50px;
+        border-radius: 20px;
+        text-align:center;
+        background-size:cover;
+        background-repeat:no-repeat;
+        color:white;
+        font-family: 'Comic Sans MS';
+        background-image: url(https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dHJvcGljYWwlMjBiZWFjaHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80);
+    }
+</style>
+@foreach (var x in Model)
+{
+    <div href="#">
+        @x.CountryId
+        <br />
+        @x.CountryName
+        
+        
+    </div>
+}

@@ -1,0 +1,47 @@
+﻿@model List<VacationSite3.Models.Data.Comments>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<style>
+    .sales {
+        width: 13.5%;
+        margin-right: 2%;
+        background: #16a085;
+        float: left;
+        cursor: pointer;
+        border-radius: 10px;
+    }
+
+    .orders {
+        width: 12.5%;
+        margin-right: 2%;
+        float: left;
+        background: #418bca;
+        cursor: pointer;
+        border-radius: 10px;
+    }
+</style>
+@foreach (var x in Model)
+{
+    <div class="sales" style="background-color:#f39c12">
+        <h3>Commenter= @x.Commenter</h3>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="orders" style="background-color:#c0392b">
+        <h4>Comment= @x.Comment</h4>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+}

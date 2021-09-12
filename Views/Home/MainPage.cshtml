@@ -1,0 +1,39 @@
+﻿@model List<VacationSite3.Models.Data.Flights>
+<head>
+    <link href="~/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+</head>
+<style>
+    div {
+        background-image: url(https://demethosman.com/wp-content/uploads/2020/02/gokyuzu.jpg);
+        width: 300px;
+        padding: 50px;
+        margin: 20px;
+        color: white;
+        border-radius:30px;
+    }
+    body {
+        background-image: url(https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2020%2F04%2F15%2Funited-airlines-zoom-sunset-UAZOOM0420.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+@foreach (var x in Model)
+{
+    <div href="#">
+        Flight Name: @x.FlightName<br />
+        Flight Time: @x.FlightTime<br />
+        Flight Price: @x.FlightPrice<br />
+        Flight Rotation: @x.Country.CountryName<br />
+        Flight Pilot: @x.FlightsPilot<br />
+        <a class="btn btn-warning">Satın Al</a>
+    </div>
+}
+<a class="btn btn-info" href="/Flight/Index">Admin Page</a>
+<style>
+    .username, .password {
+        margin-bottom: 30px;
+        border-radius: 25px;
+        box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+        transition: 0.4s;
+    }
+</style>

@@ -1,0 +1,22 @@
+﻿@model List<VacationSite3.Models.Data.Countries>
+@{
+    ViewData["Title"] = "GetCountry";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+<table class="table table-bordered">
+    <tr>
+        <td>Country Id</td>
+        <td>Country Name</td>
+    </tr>
+    @foreach (var x in Model)
+    {
+    <tr>
+        <td>@x.CountryId</td>
+        <td>@x.CountryName</td>
+        <td><a href="#" class="btn btn-success">Update</a></td>
+        <td><a href="#" class="btn btn-danger">Delete</a></td>
+    </tr>
+    }
+</table>
+
